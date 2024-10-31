@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-image: url('https://i.pinimg.com/236x/37/a8/a3/37a8a3080542e1fa872d7ac5df31bfb8.jpg');
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    min-height: 87vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+#heading {
+    text-transform: uppercase;
+    padding: 2rem 0 1rem 0;
+    letter-spacing: 5px;
+    font-family: "Quicksand", sans-serif;
+    font-size: clamp(1.6rem, 2.6vw + 0.5rem, 3rem);
+}
+
+input[type="search"] {
+    padding-left: 10px;
+    width: 280px;
+    border-radius: 2px;
+    border: none;
+    font-size: 1rem;
+    background-color: transparent;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.inputbox-button {
+    border: 2px solid grey;
+    background-color: #7e7e7e1a;
+    border-bottom: none;
+}
+
+li {
+    font-size: 19px;
+    padding: 10px 14px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid grey;
+    text-transform: capitalize;
+}
+
+#description {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    color: #872828;
+    padding-bottom: 3em;
+}
+
+#clickButton {
+    padding: 10px 32px;
+    font-size: 1rem;
+    background-color: #2b2828;
+    letter-spacing: 1px;
+    color: white;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+::placeholder {
+    font-size: 1rem;
+    color: rgb(33, 33, 33);
+    text-transform: capitalize;
+}
+
+.autocomplete-box {
+    border: 2px solid grey;
+    background-color: #7e7e7e1a;
+    /* border-top: none; */
+}
+
+#results {
+    padding: 1rem 0 2rem 3rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #312f2f;
+}
+
+span,
+.not {
+    text-transform: capitalize;
+    color: #872828;
+    font-weight: 600;
+}
+
+#errorMsg {
+    color: #872828;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.autocomplete-box li.active {
+    background-color: #d3d3d3;
+}
+
+@media screen and (max-width:400px) {
+    input[type="search"] {
+        width: 200px;
+    }
+
+    #heading,
+    #description {
+        letter-spacing: unset;
+    }
+
+    #results {
+        padding: 1rem 0 2rem 1rem;
+    }
+}

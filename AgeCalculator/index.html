@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGE CALCULATOR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            font-family: Comic Sans MS;
+            background-color: #DFDBE5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            height: 400px;
+            text-align: center;
+        }
+
+        #heading {
+            text-transform: uppercase;
+            font-size: 2.5vw;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            padding: 3vw 0;
+        }
+
+        .input {
+            padding: 3vw 11vw;
+            filter: drop-shadow(0px 3px 2px grey);
+            display: flex;
+            gap: 3rem;
+        }
+
+        input[type="date"] {
+            font-size: 18px;
+            background-color: #fbf6f6;
+            padding: 9px 20px;
+            border: 2px solid #c8c8c8;
+            cursor: auto;
+        }
+
+        input[type="date"]:focus {
+            border: 2px solid;
+        }
+
+        #calculateBtn {
+            font-size: 18px;
+            background-color: #a490a4;
+            padding: 9px 24px;
+            letter-spacing: 1.6px;
+            cursor: pointer;
+        }
+
+        #calculateBtn:hover {
+            border: 2px solid;
+        }
+
+        #result {
+            margin: 3.5vw 0;
+            font-size: 20px;
+        }
+
+        span {
+            color: #8054bd;
+        }
+
+        #alert {
+            text-align: left;
+            padding: 1rem;
+            font-size: smaller;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h2 id="heading">age calculator</h2>
+            <div class="input">
+                <input type="date" name="date" id="userdate" title="pick the date">
+                <button type="submit" id="calculateBtn" onclick="calculateAge()"
+                    title="calculate the age">calculate</button>
+            </div>
+            <p id="alert"></p>
+            <p id="result"></p> 
+        </div>
+    </div>
+    <!-- script file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
