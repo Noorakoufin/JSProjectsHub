@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(255, 255, 255);
+      color: white;
+    }
+
+    .box {
+      background-color: #282828;
+      border: 12px solid #515050;
+      padding: 20px 30px;
+      width: 350px;
+      border-radius: 10px;
+      text-align: center;
+      display: inline-flex;
+      justify-content: center;
+      align-self: center;
+    }
+
+
+    .clock {
+      font-size: 7em;
+      letter-spacing: 10px;
+      color: red;
+      font-family: Ticking Timebomb BB Regular;
+    }
+
+    #toggle {
+      position: fixed;
+      right: 20px;
+      top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="clock" id="clock"></div>
+  </div>
+  <script>
+    function updateClock() {
+      let clock = document.getElementById("clock");
+      let time = new Date();
+      let hours = time.getHours();
+      let minutes = time.getMinutes();
+      let seconds = time.getSeconds();
+      let formattedTime = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
+
+      clock.innerHTML = formattedTime;
+    }
+    function pad(number) {
+      return (number < 10 ? '0' : '') + number;
+    }
+    updateClock();
+    setInterval(updateClock, 1000)
+
+  </script>
+</body>
+
+</html>
