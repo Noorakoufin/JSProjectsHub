@@ -54,7 +54,7 @@ function calculateAge() {
   }
 
   // printing the result
-  result.innerHTML = `You are <span>${yearDiff}</span> years <span>${monthDiff}</span> months and <span>${dayDiff}</span> days old !!`;
+  result.innerHTML = `Cheers for surviving <span>${yearDiff}</span> years <span>${monthDiff}</span> months and <span>${dayDiff}</span> days in this weird world !!`;
 }
 
 // calculating days in month

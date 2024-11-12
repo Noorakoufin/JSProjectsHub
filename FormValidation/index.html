@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-     <style>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Graduate&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
         body {
@@ -180,6 +180,19 @@
             color: #99e175;
         }
 
+        .fa-eye-slash {
+            position: absolute;
+            right: 11px;
+            bottom: 12px;
+            font-weight: 400;
+            cursor: pointer;
+            color: #3d3c3c;
+        }
+
+        .form-control:nth-child(4) {
+            position: relative;
+        }
+
         .pass-req.valid:before {
             position: relative;
             left: -17px;
@@ -298,7 +311,7 @@
                 <div class="form-holder">
                     <span><i class="fa-solid fa-phone"></i></span>
                     <input type="tel" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        placeholder="012-345-6789" name="number-input">
+                        placeholder="0123456789" name="number-input">
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small class="error-message"></small>
@@ -313,14 +326,16 @@
                 <div class="form-holder">
                     <span><i class="fa-solid fa-lock"></i></span>
                     <input type="password" class="form-control" placeholder="Password" name="password-input">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-regular fa-eye-slash" id="slash_eye"></i>
+                    <!-- <i class="fa-solid fa-circle-check"></i> -->
+                    <!-- <i class="fa-solid fa-circle-exclamation"></i> -->
                     <small class="error-message"></small>
                 </div>
                 <div class="pass-requirements">
                     <span class="pass-req invalid">Atleast one Uppercase letter</span>
                     <span class="pass-req invalid">Atleast one Lowercase letter</span>
                     <span class="pass-req invalid">Atleast one Number</span>
+                    <span class="pass-req invalid">Atleast one Special character</span>
                     <span class="pass-req invalid">Minimum 8 characters</span>
                 </div>
                 <div class="form-holder">
@@ -336,8 +351,9 @@
             </form>
             <img src="image-2.webp" alt="" class="image-2">
         </div>
- </div>
- <script src="script.js"></script>
+    </div>
+    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/178cfcf679.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -38,7 +38,7 @@ function checkInput() {
 
   formInputs.forEach((input, index) => {
     let value = input.value.trim();
-    const telPattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    const telPattern = /^[0-9]{10}$/;
     let formGroup = formHolder[index];
     //(^)starts search from the beginning
     //($)till end
@@ -49,7 +49,7 @@ function checkInput() {
       setError(formGroup, "must be at least 3 characters long");
       isValid = false;
     } else if (input.type === "tel" && !telPattern.test(value)) {
-      setError(formGroup, "Invalid phone number - Match the pattern");
+      setError(formGroup, "Invalid phone number");
       isValid = false;
     } else if (input.type === "email" && !value.includes("@gmail.com")) {
       setError(formGroup, "Invalid Email format");
@@ -92,7 +92,10 @@ function passwordValidate() {
     } else if (index === 2 && /[0-9]/.test(password)) {
       condition.classList.add("valid");
       condition.classList.remove("invalid");
-    } else if (index === 3 && password.length >= 8) {
+    } else if (index === 3 && /[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      condition.classList.add("valid");
+      condition.classList.remove("invalid");
+    } else if (index === 4 && password.length >= 8) {
       condition.classList.add("valid");
       condition.classList.remove("invalid");
     } else {
@@ -106,7 +109,7 @@ function passwordValidate() {
 }
 //function to validate confirm password
 function confirmPasswordValidate() {
-  let isValid = true;
+  // let isValid = true;
   const passwordInput = formInputs[3];
   const confirmPasswordInput = formInputs[4];
   const password = passwordInput.value.trim();
@@ -136,4 +139,12 @@ function setSuccess(input) {
 // Input event listener for real-time validation on keyup
 formInputs.forEach((input) => {
   input.addEventListener("input", checkInput);
+});
+
+//password visibility toggle
+document.querySelector("#slash_eye").addEventListener("click", () => {
+  const passwordInput = formInputs[3];
+  let type =
+    passwordInput.getAttribute("type") === "password" ? "text" : "password";
+  passwordInput.setAttribute("type", type);
 });
