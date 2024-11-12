@@ -3,16 +3,16 @@ const url = "https://newsapi.org/v2/everything?q=y&apiKey=API_KEY";
 let Currentquery = "politics";
 
 async function getNews(query) {
-  // try {
-  //     const response = await fetch(
-  //         `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`
-  //     );
-  //     if (!response.ok) throw new Error("Network response was not okay");
-  //     const data = await response.json();
-  //     displayData(data.articles);
-  // } catch (err) {
-  //     console.error("Fetch error:", err);
-  // }
+  try {
+      const response = await fetch(
+          `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`
+      );
+      if (!response.ok) throw new Error("Network response was not okay");
+      const data = await response.json();
+      displayData(data.articles);
+  } catch (err) {
+      console.error("Fetch error:", err);
+  }
 }
 //main function logic
 function displayData(articles) {
